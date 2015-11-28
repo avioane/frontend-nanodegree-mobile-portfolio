@@ -497,18 +497,27 @@ function updatePositions() {
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
+// Uses window.innerHeight to calculate the number of background pizzas
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8,
-      s = 256;
+      s = 256,
+      f = document.createDocumentFragment(),
+      w = window.innerHeight,
+      elem = document.createElement("img"),
+      calc;
+
   for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
-    elem.className = 'mover';
-    elem.src = "images/pizza.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
-    elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    if(c = (Math.floor(i / cols) * s), c >= 0 && w >= c + 100){
+      elem = document.createElement('img');
+      elem.className = 'mover';
+      elem.src = "images/pizza.png";
+      elem.style.height = "100px";
+      elem.style.width = "73.333px";
+      elem.basicLeft = (i % cols) * s;
+      elem.style.top = c + 'px';
+      f.appendChild(elem);
+    }
+    document.getElementById("movingPizzas1").appendChild(f);
   }
   updatePositions();
 });

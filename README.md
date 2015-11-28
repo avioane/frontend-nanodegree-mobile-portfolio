@@ -30,6 +30,7 @@ B. Or:
 - Moved the declaration of pizzasDiv outside the for loop
 - Changed querySelectorAll('.mover'); to getElementsByClassName("mover");
 - updatePositions function: Moved document.body.scrollTop / 1250 before the for loop;
+- Used window.innerHeight to calculate the number of background pizzas
 
 ### Resources used
 https://developer.chrome.com/devtools/docs/tips-and-tricks
