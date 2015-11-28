@@ -5,7 +5,7 @@ A. Either:
 - Open the local copy of index.html through a web browser
 
 B. Or:
-- Navigate to http://avioane.github.io/views/pizza.html
+- Navigate to http://avioane.github.io
 
 ## Structure
 - The original source is in the orig folder
